@@ -1,14 +1,17 @@
 language: node_js
 node_js:
-  - 12
+- 12
 before_script:
-  - npm install @11ty/eleventy -g
+- npm install @11ty/eleventy -g
 script: eleventy --pathprefix="/eleventy-base-blog/"
 deploy:
   local-dir: _site
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: master
+env:
+  global:
+    secure: q3XcCWNr1kxlZCut40NbDw2S1SUcFs0yAycwqwAoVds1XFPNcNrsQtweM2RwQp9cPSd6oBnHRihhKJNx4tHpys6W4PKow190nCZ2lAINUrOVFJIAx9GKtMzwo/9Y8ZyVvRiPyw29uIRc0Tl3h2JbuKwwvJ9Scjar5GnP6GkwXdYGzH90GIwei5OTANsblvjZs/CZK66k6KRok3PwcJ30p0Zl2OGBr2AaHW2GDpy+aEwPPtqCEkppEe3/zSgp4F8ASXuPfZ+NzF7IhvQAOpWCLNNsB3P/9KZWP9wBAaPS1kJZ4tBCUDTV23UUKDOZpIeoxJVu6VZfdykksknFIIcEDSq3hRAxsgultKJqxNIqdbCAaLfW9tF/gWLrVkN9fS91MBhlPbqKeXXwMrsQcVNkTiNSfGCeLfSQPQwvCe+d3LKIp60R4xLLeDtzrNkUV+972RpyUi8icpCce+Nz6Uol5hA2pSSrOiZP+84XqZsQ5y/XUgVxJPh8v/iovW4NKmcTARDC9Bsc12pD7PQPsr/M1ifO435PLFe2/rxtWoM9PvEblom52emcYT1rICs1FdoObGDbJSuYAt0j9ElSvEHMw2G7PImGz3SrZ0qhjHVo+CWAO+DHcTw8bcv+6352VVfioleFmXY2i1fgtO4fhHYulU0CxKnDXtC61ama/2mXFfs=
